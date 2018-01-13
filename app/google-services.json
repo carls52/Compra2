@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "792755644524",
+    "firebase_url": "https://compra2-19f15.firebaseio.com",
+    "project_id": "compra2-19f15",
+    "storage_bucket": "compra2-19f15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792755644524:android:c9366180133481bc",
+        "android_client_info": {
+          "package_name": "data.compra2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792755644524-scmsrujkca7cpa185ulh7n5pnol3ofv0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "data.compra2",
+            "certificate_hash": "cf642fcbc76f40c60272cbb673b0ebf59ef714e7"
+          }
+        },
+        {
+          "client_id": "792755644524-lo700et97a41hhg6trbgabrp3t3rmmf3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUl4R5f89YH84Xqloavp44eXNsdwLvEb4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792755644524-lo700et97a41hhg6trbgabrp3t3rmmf3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

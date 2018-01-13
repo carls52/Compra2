@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="data.compra2.AddAnuncio"
+    tools:showIn="@layout/activity_add_anuncio">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nombreOU"
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="nombre"
+                android:inputType="textPersonName" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/nombreOU"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/ic_menu_gallery" />
+
+            <EditText
+                android:id="@+id/precio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/imageView"
+
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="precio"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/descript"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignEnd="@+id/nombreOU"
+                android:layout_alignLeft="@+id/precio"
+                android:layout_alignRight="@+id/nombreOU"
+                android:layout_alignStart="@+id/precio"
+                android:layout_below="@+id/precio"
+                android:layout_marginTop="18dp"
+
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:ems="10"
+                android:hint="descripción"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/nombreOU"
+                android:layout_alignLeft="@+id/descript"
+                android:layout_alignRight="@+id/nombreOU"
+                android:layout_alignStart="@+id/descript"
+                android:layout_below="@+id/descript"
+                android:layout_marginTop="22dp"
+
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+
+                android:elevation="16dp"
+                android:ems="10"
+                android:hint="teléfono"
+                android:inputType="number" />
+
+
+            <Button
+                android:id="@+id/guardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/phone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:text="guardar" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nombreOU"
+                android:layout_toEndOf="@+id/imageView"
+                android:layout_toRightOf="@+id/imageView"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/ic_menu_camera" />
+        </RelativeLayout>
+
+
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

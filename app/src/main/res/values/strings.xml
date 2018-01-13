@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Compra2</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_add_anuncio">AddAnuncio</string>
+    <string name="title_activity_perfil">Perfil</string>
+    <string name="title_activity_mis_anuncios">MisAnuncios</string>
+    <string name="title_activity_oferta_unica">OfertaUnica</string>
+
+    <string name="title_activity_inicio">Inicio</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

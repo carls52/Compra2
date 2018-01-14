@@ -9,7 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,7 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MisAnuncios extends AppCompatActivity {
+public class Buscar extends AppCompatActivity {
+
     Button atras;
     DatabaseReference dbuser;
     FirebaseAuth auth;
@@ -30,11 +34,15 @@ public class MisAnuncios extends AppCompatActivity {
     String MiMail;
     GridView grid;
     List<Oferta> list ;
+
+    TextView NoResults;
+    EditText busqueda;
+    ImageView lupa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mis_anuncios);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarMA);
+        setContentView(R.layout.activity_buscar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarB);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 
@@ -42,16 +50,51 @@ public class MisAnuncios extends AppCompatActivity {
         yo = auth.getCurrentUser();
         MiMail = yo.getEmail();
 
-
+        NoResults = findViewById(R.id.NoResults);
+        lupa = findViewById(R.id.lupa);
+        busqueda = findViewById(R.id.busqueda);
         dbuser = FirebaseDatabase.getInstance().getReference("Anuncios");
-        grid = findViewById(R.id.MiGrid);
+        grid = findViewById(R.id.MiGridB);
         list = new ArrayList<>();
 
-        atras = findViewById(R.id.atrasMA);
+        atras = findViewById(R.id.atrasB);
         atras.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        lupa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                dbuser.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        list.clear();
+                        for(DataSnapshot userSnapshot: dataSnapshot.getChildren()){
+                            Oferta us = userSnapshot.getValue(Oferta.class);
+                                if(us.getNombre().contains(busqueda.getText().toString().trim())) {
+                                    NoResults.setVisibility(View.GONE);
+                                    list.add(us);
+                                }
+                        }
+                        if(list.isEmpty())
+                        {
+                            NoResults.setText("NO HAY RESULTADOS");
+                            NoResults.setVisibility(View.VISIBLE);
+                        }
+                        OfertList adapter = new OfertList(Buscar.this, list);
+                        grid.setAdapter(adapter);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         });
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -78,13 +121,13 @@ public class MisAnuncios extends AppCompatActivity {
                     Oferta us = userSnapshot.getValue(Oferta.class);
                     if(us.getDueño()!= null)
                     {
-                        if(us.getDueño().equals(MiMail)) {
+                        if(us.getNombre().equals(" ")) {
                             list.add(us);
                         }
                     }
 
                 }
-                OfertList adapter = new OfertList(MisAnuncios.this, list);
+                OfertList adapter = new OfertList(Buscar.this, list);
                 grid.setAdapter(adapter);
             }
 

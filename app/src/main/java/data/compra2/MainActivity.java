@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -57,8 +58,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        dbuser = FirebaseDatabase.getInstance().getReference("Anuncio");
-        listOfertas = new ArrayList<Oferta>();
+        dbuser = FirebaseDatabase.getInstance().getReference("Anuncios");
+        listOfertas = new ArrayList<>();
 
 
 
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity
 
         gridOfertas = (GridView) findViewById(R.id.gridOfertas);
 
-        comprobarArticulos();
+        //comprobarArticulos();
 
 
         gridOfertas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -74,9 +75,9 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(view.getContext(), OfertaUnica.class);
                 Oferta obj = listOfertas.get(i);
-                //intent.putExtra("Nombre",obj);
+                intent.putExtra("obj",obj);
                 startActivity(intent);
-                Toast.makeText(MainActivity.this,listOfertas.get(i).getNombre(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this,listOfertas.get(i).getNombre(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -113,6 +114,8 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -132,12 +135,15 @@ public class MainActivity extends AppCompatActivity
             startActivity(t);
 
         } else if (id == R.id.nav_manage) {
-            Intent t = new Intent(this, Inicio.class);
+            Intent t = new Intent(this, Buscar.class);
             startActivity(t);
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        }
+        else if (id == R.id.log_out) {
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            Intent t = new Intent(this, Inicio.class);
+            startActivity(t);
 
         }
 
@@ -145,7 +151,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void comprobarArticulos()
+/*    public void comprobarArticulos()
     {
         Oferta a = new Oferta ("COSAS","100€","pollas","pollas");
         Oferta b = new Oferta ("COSAS","100€","pollas","pollas");
@@ -186,7 +192,34 @@ public class MainActivity extends AppCompatActivity
             }
 
         });
-*/
-    }
+
+    }*/
+@Override
+protected void onStart() {
+    super.onStart();
+    //OfertList adapter = new OfertList(MainActivity.this,listOfertas);
+    //gridOfertas.setAdapter(adapter);
+        dbuser.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                listOfertas.clear();
+                for(DataSnapshot snapshot : dataSnapshot.getChildren())
+                {
+                    Oferta o = snapshot.getValue(Oferta.class);
+                    listOfertas.add(o);
+                }
+                OfertList adapter = new OfertList(MainActivity.this, listOfertas);
+                gridOfertas.setAdapter(adapter);
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
+}
 }
 

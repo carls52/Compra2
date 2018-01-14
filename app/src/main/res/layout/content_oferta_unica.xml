@@ -16,6 +16,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="12dp"
         android:text="HOLA SSOY EL TIITULO Y QUEDO ASI"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -117,6 +118,7 @@
         android:layout_alignLeft="@+id/textView8"
         android:layout_alignStart="@+id/textView8"
         android:layout_below="@+id/Barra4"
+        android:layout_marginTop="8dp"
         android:text="CONTACTO :" />
 
     <TextView
@@ -126,7 +128,16 @@
         android:layout_below="@+id/Barra4"
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
         android:layout_toEndOf="@+id/textView11"
         android:layout_toRightOf="@+id/textView11"
         android:text="persona@gmail.com" />
+
+    <TextView
+        android:id="@+id/mailOU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/contactoOU"
+        android:layout_below="@id/contactoOU"
+        android:text="E-Mail" />
 </RelativeLayout>

@@ -8,16 +8,18 @@
     tools:context="data.compra2.MisAnuncios"
     tools:showIn="@layout/activity_mis_anuncios">
 
-    <TextView
-        android:id="@+id/textOdio"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:layout_marginEnd="8dp"
-        android:text="HOLA SOY UN TEXT VIEW , AQUÍ DEBERÍA HABER UN GRIDVIEW MUY CHULO CON LOS ANUNCIOS DEL USUARIO EN CUESTIÓN PERO FIREBASE ME ODIA"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="58dp" />
+    <GridView
+        android:id="@+id/MiGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="600dp"
+        android:numColumns="auto_fit"
+        android:paddingBottom="0dp"
+        android:paddingEnd="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:verticalSpacing="5dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
 </android.support.constraint.ConstraintLayout>

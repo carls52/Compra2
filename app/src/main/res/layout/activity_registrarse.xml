@@ -37,7 +37,7 @@
         android:layout_marginTop="16dp"
         android:background="@android:color/background_light"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textEmailAddress" />
 
     <TextView
         android:id="@+id/textView5"
@@ -48,6 +48,9 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textStyle="bold" />
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <EditText
         android:id="@+id/Rpass"
         android:layout_width="match_parent"
@@ -60,6 +63,14 @@
         android:ems="10"
         android:inputType="textPassword" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
     <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
@@ -83,13 +94,15 @@
 
     <Button
         android:id="@+id/Rguardar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="140dp"
-        android:background="@android:drawable/editbox_background_normal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="?android:attr/scrollbarThumbHorizontal"
         android:text="Registrarse" />
 
 
-
 </LinearLayout>
+
+
 

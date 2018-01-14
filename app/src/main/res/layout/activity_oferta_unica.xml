@@ -34,7 +34,31 @@
     </android.support.design.widget.AppBarLayout>
 
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_oferta_unica" />
 
-<include layout="@layout/content_oferta_unica" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/MandarMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/alert_light_frame"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="16dp"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="right|bottom"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/llamar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="16dp"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="left|bottom"
+        app:srcCompat="@android:drawable/ic_menu_call" />
 
 </android.support.design.widget.CoordinatorLayout>

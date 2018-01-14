@@ -13,7 +13,8 @@
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp"
         app:srcCompat="@mipmap/ic_launcher_pig" />
 
     <TextView
@@ -26,7 +27,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/iCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -35,7 +36,18 @@
         android:layout_marginTop="16dp"
         android:background="@android:color/background_light"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textEmailAddress" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/iProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:indeterminate="false"
+            android:visibility="gone" />
 
     <TextView
         android:id="@+id/textView5"
@@ -45,9 +57,9 @@
         android:text="Contraseña:"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textStyle="bold" />
-
+    </RelativeLayout>
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/iPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -56,24 +68,17 @@
         android:layout_marginTop="16dp"
         android:background="@android:color/background_light"
         android:ems="10"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/Acceder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="155dp"
-        android:background="@android:drawable/editbox_background_normal"
-        android:text="acceder" />
-
-    <TextView
-        android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="8dp"
-        android:text="Los datos introducidos no son correctos"
-        android:textColor="@color/colorAccent" />
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="?android:attr/scrollbarThumbHorizontal"
+        android:text="acceder" />
+
 
     <Button
         android:id="@+id/Registrarse"

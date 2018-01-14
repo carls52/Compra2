@@ -15,7 +15,7 @@
         android:layout_height="100dp"
         android:layout_marginBottom="40dp"
         android:layout_marginTop="40dp"
-        app:srcCompat="@mipmap/ic_launcher_pig" />
+        app:srcCompat="@drawable/ic_launcher_pig" />
 
     <TextView
         android:id="@+id/textView3"
@@ -57,18 +57,20 @@
         android:text="Contraseña:"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/iPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/background_light"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:layout_below="@id/textView5"/>
     </RelativeLayout>
-    <EditText
-        android:id="@+id/iPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/background_light"
-        android:ems="10"
-        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/Acceder"
@@ -85,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:text="¿No tienes cuenta? Regístrate aquí" />

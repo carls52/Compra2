@@ -11,7 +11,7 @@
     <GridView
         android:id="@+id/gridOfertas"
         android:layout_width="wrap_content"
-        android:layout_height="600dp"
+        android:layout_height="match_parent"
         android:numColumns="auto_fit"
         android:paddingBottom="0dp"
         android:paddingEnd="16dp"
@@ -20,6 +20,6 @@
         android:paddingStart="16dp"
         android:paddingTop="15dp"
         android:verticalSpacing="5dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="-5dp" />
 </android.support.constraint.ConstraintLayout>

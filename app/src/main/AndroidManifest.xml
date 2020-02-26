@@ -41,7 +41,7 @@
         </activity>
         <activity
             android:name=".Inicio"
-            android:label="Compra"
+            android:label="ComprApp"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

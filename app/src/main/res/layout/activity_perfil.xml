@@ -23,7 +23,7 @@
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_arrow_back_white_36dp" />
+                android:background="@drawable/ic_arrow_back_white_24dp" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbarP"
@@ -37,8 +37,6 @@
 
         <include
             layout="@layout/content_perfil"
-            layout_height="wrap_content"
-            layout_width="match_parent"
             android:layout_width="match_parent"
             android:layout_height="514dp"
             android:layout_weight="1" />

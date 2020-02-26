@@ -110,7 +110,7 @@
                 android:layout_toEndOf="@+id/imagen"
                 android:layout_toRightOf="@+id/imagen"
                 android:background="@android:color/transparent"
-                app:srcCompat="@drawable/ic_add_a_photo_black_36dp" />
+                app:srcCompat="@drawable/ic_add_a_photo_black_24dp" />
 
             <ProgressBar
                 android:visibility="gone"

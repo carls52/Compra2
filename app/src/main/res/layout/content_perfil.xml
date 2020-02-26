@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="39dp"
-        android:layout_marginStart="39dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginStart="57dp"
         android:layout_toEndOf="@+id/barraP"
         android:layout_toRightOf="@+id/barraP"
         android:text="Correo electrónico"
@@ -41,12 +41,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView2"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
         android:layout_toEndOf="@+id/imageView2"
         android:layout_toRightOf="@+id/imageView2"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/ic_add_a_photo_black_36dp" />
+        app:srcCompat="@drawable/ic_add_a_photo_black_24dp" />
 
     <ProgressBar
         android:id="@+id/barraP"
@@ -62,13 +60,11 @@
         android:id="@+id/lapiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_toEndOf="@+id/barraP"
-        android:layout_toRightOf="@+id/barraP"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toLeftOf="@+id/ENOM"
+        android:layout_toStartOf="@+id/ENOM"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/ic_edit_black_36dp" />
+        app:srcCompat="@drawable/ic_edit_black_24dp" />
 
     <EditText
         android:id="@+id/NewMail"
